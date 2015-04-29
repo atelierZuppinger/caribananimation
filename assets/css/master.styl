@@ -3,6 +3,20 @@
 normalize-css()
 base()
 
+@keyframes scroll
+  for num in (0..10)
+    {10% * num}
+      margin-top (-50%*num)
+    {10% * num + 9%}
+      margin-top (-50%*num)
+
+@keyframes pushBurger
+  0%
+    left 100%
+  100%
+    left 50%
+  
+  
 .green
   color green
 .pink
@@ -38,10 +52,14 @@ base()
 .f150
   font-size 40px
   line-height 40px
+
 #main
-  width 640px
   background black
   color black
+  &.w640x320
+    width 640px
+    height 320px
+    overflow hidden
 div[id^=slide]
   width 100%
   height 320px
@@ -53,6 +71,11 @@ div[id^=slide]
   position relative
 #slide1
   padding-top 5%
+  animation-name scroll 
+  animation-duration 1s
+  animation-iteration-count 1
+  animation-fill-mode forwards
+  animation-timing-function ease
 #slide2
   padding-top 12%
 #slide3
@@ -76,16 +99,23 @@ div[id^=slide]
 #slide10
   padding-top 11%
 #slide11
-  width 400%
+  width 100%
   img
     position absolute
     top 12%
     margin-left -80px
   div[id^=slide11]
-    float left
+    position absolute
     background black
-    width 25%
+    left 100%
+    height inherit
+    animation-delay 1s
+    animation-duration 1s
+    animation-timing-function ease
+    animation-fill-mode both
+    animation-iteration-count 1
 #slide11b
+  animation-name pushBurger
   div
     display inline-block
     color white
