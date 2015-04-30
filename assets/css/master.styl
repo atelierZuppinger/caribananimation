@@ -97,10 +97,10 @@ timing = 10s
         font-size (25px/2)
     #slide11c
       div
-        font-size (16px/2)
+        font-size 10px
       .big
         div
-          font-size (20px/2)
+          font-size 11px
 div[id^=slide]
   width 100%
   height inherit
@@ -206,11 +206,11 @@ timing = timing + 4s
     display inline
     font-weight normal
     font-size 16px
+    &:after
+      display none
   .big
     div
       font-size 20px
-      &:after
-        display none
   .small
     display block
     text-transform none
@@ -219,7 +219,7 @@ timing = timing + 4s
   > .violet:after
     display none
     
-timing = timing + 3s
+timing = timing + 3s + 3245619875s
 
 #slide11d
   background black
