@@ -8,7 +8,8 @@ html
     meta(name='author', content= "author of the site")
     //- uncomment if your site is responsive!
     //- meta(name="viewport" content="width=device-width, initial-scale=1")
-    title SIHH-0846 FHH Exposition Milan
+    title Caribana 2015 | adds
+    link(type="text/css", rel="stylesheet", href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic", media="all")
     link(rel='stylesheet', href='css/master.css')
 
   body
@@ -28,9 +29,6 @@ html
           elm.parentNode.replaceChild(newOne, elm);
           a2.push(newOne);
         }
-        a2[a2.length-1].addEventListener('webkitAnimationEnd', function(){
-          onFinish(a2);
-        }, false);
       }
 
       setInterval(function(){ onFinish(a2); }, 20000);

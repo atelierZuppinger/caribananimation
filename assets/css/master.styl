@@ -39,7 +39,6 @@ timing = 0s
 .f360
   font-size 96px
   line-height 84px
-  letter-spacing -1px
 .f300
   font-size 85px
   line-height 75px
@@ -65,12 +64,22 @@ timing = 10s
   background black
   color black
   overflow hidden
+  font-family 'Source Sans Pro',sans-serif
   &.w640x320
     width 640px
     height 320px
   &.w320x160
     width 320px
     height 160px
+    #slide11
+      div
+        font-size (25px/2)
+    #slide11c
+      div
+        font-size 9px
+      .big
+        div
+          font-size 11px
     .f360
       font-size (96px/2)
       line-height (84px/2)
@@ -90,17 +99,8 @@ timing = 10s
       font-size (55px/2)
       line-height (55px/2)
     .f150
-      font-size (40px/2)
-      line-height (40px/2)
-    #slide11
-      div
-        font-size (25px/2)
-    #slide11c
-      div
-        font-size 10px
-      .big
-        div
-          font-size 11px
+      font-size (40px/2) !important
+      line-height (40px/2) !important
 div[id^=slide]
   width 100%
   height inherit
@@ -108,7 +108,6 @@ div[id^=slide]
   box-sizing border-box
   text-transform uppercase
   font-weight bold
-  letter-spacing -1px
   position relative
 #slide1
   padding-top 5%
@@ -123,7 +122,7 @@ div[id^=slide]
   padding-top 12%
 #slide3
   background green
-  padding-top 9%
+  padding-top 14%
 #slide4
   padding-top 8%
 #slide5
