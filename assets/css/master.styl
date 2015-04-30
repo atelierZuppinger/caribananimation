@@ -68,9 +68,42 @@ timing = 10s
   &.w640x320
     width 640px
     height 320px
+  &.w320x160
+    width 320px
+    height 160px
+    .f360
+      font-size (96px/2)
+      line-height (84px/2)
+    .f300
+      font-size (85px/2)
+      line-height (75px/2)
+    .f240
+      font-size (75px/2)
+      line-height (66px/2)
+    .f225
+      font-size (69px/2)
+      line-height (64px/2)
+    .f200
+      font-size (60px/2)
+      line-height (60px/2)
+    .f187
+      font-size (55px/2)
+      line-height (55px/2)
+    .f150
+      font-size (40px/2)
+      line-height (40px/2)
+    #slide11
+      div
+        font-size (25px/2)
+    #slide11c
+      div
+        font-size (16px/2)
+      .big
+        div
+          font-size (20px/2)
 div[id^=slide]
   width 100%
-  height 320px
+  height inherit
   text-align center
   box-sizing border-box
   text-transform uppercase
@@ -84,6 +117,8 @@ div[id^=slide]
   animation-iteration-count 1
   animation-fill-mode forwards
   animation-timing-function ease
+  img
+    width 35%
 #slide2
   padding-top 12%
 #slide3
@@ -111,10 +146,6 @@ timing = timing + 1s
 
 #slide11
   width 100%
-  img
-    position absolute
-    top 12%
-    margin-left -80px
   div[id^=slide11]
     position absolute
     bottom 0
@@ -127,11 +158,18 @@ timing = timing + 1s
     display inline-block
     color white
     font-size 25px
+
 #slide11a
   left 0
   animation-duration 1s
   animation-delay timing + .2s
   animation-name burgerKicked
+  img
+    position absolute
+    top 12%
+    margin-left -13%
+    width 26%
+
 #slide11b
   animation-duration 1s
   animation-delay timing
@@ -157,7 +195,7 @@ timing = timing + 1s
       color orange
 
 timing = timing + 4s
-
+  
 #slide11c
   padding-top 14%
   background black
