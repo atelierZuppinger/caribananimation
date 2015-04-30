@@ -16,4 +16,24 @@ html
 
     //script(src='js/build.js')
 
+    // script
+    script.
+      var finish = document.getElementById('slide11d'),
+          a2 = document.getElementsByClassName('a2');
 
+      function onFinish(els) {
+        var a2 = [];
+        for (i=0;i<els.length;i++) {
+          var elm = els[i], newOne = elm.cloneNode(true);
+          elm.parentNode.replaceChild(newOne, elm);
+          a2.push(newOne);
+        }
+        a2[a2.length-1].addEventListener('webkitAnimationEnd', function(){
+          onFinish(a2);
+        }, false);
+      }
+
+      setInterval(function(){ onFinish(a2); }, 20000);
+      /*finish.addEventListener('webkitAnimationEnd', function(){
+        onFinish(a2);
+      }, false);*/
