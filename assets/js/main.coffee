@@ -3,6 +3,7 @@ $ = require('zepto-browserify').$
 $ () ->
   finish = $ '#slide5'
   slides = $ 'div, img'
+  ###
   onFinish = (els) ->
       slides = []
       for i in [0...els.length]
@@ -13,3 +14,4 @@ $ () ->
   setInterval () ->
       onFinish(slides)
   , 7000
+  ###

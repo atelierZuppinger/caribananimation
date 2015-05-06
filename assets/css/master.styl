@@ -6,22 +6,24 @@ base()
 timing = 0s
 
 @keyframes scroll
-  for num in (0..10)
-    {10% * num}
-      margin-top (-50%*num)
-    {10% * num + 9%}
-      margin-top (-50%*num)
-
-@keyframes pushBurger
   0%
-    left 100%
+    margin-left 0
+  10%
+    margin-left 0%
+  15%
+    margin-left -100%
+  45%
+    margin-left -100%
+  50%
+    margin-left -200%
+  80%
+    margin-left -200%
+  85%
+    margin-left -300%
+  95%
+    margin-left -300%
   100%
-    left 0%
-@keyframes burgerKicked
-  0%
-    left 0
-  100%
-    left -100%
+    margin-left -400%
   
 .green
   color green
@@ -36,30 +38,6 @@ timing = 0s
 .white
   color white
 
-.f360
-  font-size 96px
-  line-height 84px
-.f300
-  font-size 85px
-  line-height 75px
-.f240
-  font-size 75px
-  line-height 66px
-.f225
-  font-size 69px
-  line-height 64px
-.f200
-  font-size 60px
-  line-height 60px
-.f187
-  font-size 55px
-  line-height 55px
-.f150
-  font-size 40px
-  line-height 40px
-
-timing = 10s
-
 #main
   background black
   color black
@@ -71,110 +49,60 @@ timing = 10s
   &.w320x160
     width 320px
     height 160px
-    #slide11
+    #slide2
       div
-        font-size (25px/2)
-    #slide11c
+        font-size 18px
+    #slide3
+      padding-top 1%
       div
-        font-size 9px
-      .big
-        div
-          font-size 11px
-    .f360
-      font-size (96px/2)
-      line-height (84px/2)
-    .f300
-      font-size (85px/2)
-      line-height (75px/2)
-    .f240
-      font-size (75px/2)
-      line-height (66px/2)
-    .f225
-      font-size (69px/2)
-      line-height (64px/2)
-    .f200
-      font-size (60px/2)
-      line-height (60px/2)
-    .f187
-      font-size (55px/2)
-      line-height (55px/2)
-    .f150
-      font-size (40px/2) !important
-      line-height (40px/2) !important
+        font-size 11px
+        &.big
+          display block
+          margin-bottom 10px
+          div
+            font-size 13px
+            line-height 13px
+    #slide4
+      padding-top 4%
+      a
+        font-size 20px
+#scroller
+  width 500%
+  animation-name scroll
+  animation-duration 20s
+  animation-iteration-count 1
+  animation-fill-mode forwards
+  height inherit
 div[id^=slide]
-  width 100%
+  width 20%
+  background black
   height inherit
   text-align center
   box-sizing border-box
   text-transform uppercase
   font-weight bold
   position relative
-#slide1
-  padding-top 5%
-  animation-name scroll
-  animation-duration timing
-  animation-iteration-count 1
-  animation-fill-mode forwards
-  animation-timing-function ease
-  img
-    width 35%
+  float left
+
+.logo
+  width 40%
+  position absolute
+  top 5%
+  left 48%
+
+.burger
+  position absolute
+  top 5%
+  left -25%
+  width 60%
+
 #slide2
-  padding-top 12%
-#slide3
-  background green
-  padding-top 14%
-#slide4
-  padding-top 8%
-#slide5
-  padding-top 9%
-  background pink
-#slide6
-  padding-top 14%
-#slide7
-  background blue
-  padding-top 9%
-#slide8
-  padding-top 15%
-#slide9
-  background orange
-  padding-top 9%
-#slide10
-  padding-top 11%
-
-timing = timing + 1s
-
-#slide11
-  width 100%
-  div[id^=slide11]
-    position absolute
-    bottom 0
-    left 100%
-    height inherit
-    animation-timing-function ease
-    animation-fill-mode both
-    animation-iteration-count 1
-
-#slide11a
-  left 0
-  animation-duration 1s
-  animation-delay timing + .2s
-  animation-name burgerKicked
-  img
-    position absolute
-    top 12%
-    margin-left -13%
-    width 26%
-
-#slide11b
-  animation-duration 1s
-  animation-delay timing
-  animation-name pushBurger
+  padding-top .5%
   div
     display inline-block
     color white
-    font-size 25px
-#slide11b, #slide11c
-  padding-top 16%
+    font-size 37px
+#slide2, #slide3
   div
     &:after
       content '/'
@@ -192,24 +120,19 @@ timing = timing + 1s
       color violet
     &.orange:after
       color orange
-
-timing = timing + 4s
   
-#slide11c
-  padding-top 14%
+#slide3
+  padding-top 1.5%
   background black
-  animation-delay timing
-  animation-duration 0s
-  animation-name pushBurger
   div
     display inline
     font-weight normal
-    font-size 16px
-    &:after
-      display none
+    font-size 23px
   .big
     div
-      font-size 20px
+      font-size 26px
+      &:after
+        display none
   .small
     display block
     text-transform none
@@ -217,12 +140,21 @@ timing = timing + 4s
       color white
   > .violet:after
     display none
-    
-timing = timing + 3s
 
-#slide11d
+#slide4
   background black
   animation-delay timing
   animation-duration 0s
   animation-name pushBurger
-  padding-top 22%
+  padding-top 4.5%
+  a
+    color white
+    text-decoration none
+    font-size 40px
+    line-height 40px
+    position relative
+    z-index 12
+  .burger
+    left 75%
+  .logo 
+    left 148%
